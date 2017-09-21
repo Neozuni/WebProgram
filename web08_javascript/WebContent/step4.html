@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>자바스크립트를 이용해서 데이타의 유효성을 검증</title>
+<script type="text/javascript">
+/*  
+ 1. 아이디를 입력하지 않고 버튼 클릭 :
+	 "아이디 입력은 필수사항입니다." 메세지 띄우고 / 포커스 정비
+ 2. 패스워드를 입력하지 않고 버튼 클릭 :	 
+	 "패스워드 입력은 필수사항입니다." 메세지 띄우고 / 포커스 정비
+ 3. 아이디, 패스워드를 모두 입력하고 버튼을 클릭 :
+	두개의 정보를 받아서 사이트로 이동.
+	login.jsp
+
+*/
+function showLogin() {
+	var frm = document.loginFrm;
+	if(frm.id.value==""){ //아이디를 입력하지 않았다면
+		alert("아이디 입력은 필수입니다..");
+		frm.id.focus();
+	}else if(frm.password.value==""){//페스워드를 입력하지 않았다면
+		alert("패스워드는 입력은 필수입니다..");
+		frm.password.focus();
+	}else{
+		var userId = frm.id.value;
+		var userPass = frm.password.value;
+		alert("ID :: "+userId+",  PASSWORD :: "+userPass);
+		location.href=
+		"http://localhost:8888/web08_javascript/login.jsp?id="+userId+"&&pass="+userPass;
+	}
+	
+	
+}
+
+</script>
+</head>
+<body>
+<h2 align="center">LOGIN FORM TABLE....</h2><p>
+<form name="loginFrm" id="login">
+<table border="1" align="center">
+	<tr>
+		<td>아이디</td>
+		<td><input type="text" name="id" size="22"></td>
+	</tr>
+	<tr>
+		<td>패스워드</td>
+		<td><input type="password" name="password" size="22"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input type="button" value="LOGIN" onclick="showLogin()">
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
+
+
+
+
+
+

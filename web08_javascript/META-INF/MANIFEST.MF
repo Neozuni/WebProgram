@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: web08_javascript
+Bundle-SymbolicName: web08_javascript
+Bundle-Version: 1.0.0.qualifier

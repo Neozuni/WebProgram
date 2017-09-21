@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Security page</title>
+
+<script type="text/javascript">
+
+	function enterForm() {
+		//var f = document.frm; // 이름으로 확인 
+		var f = document.getRlementById("formFrm"); // 아이디로 확인 
+		
+		if(isNaN(f.age.value)){} // if 가 true 면 문자입력했다 <nan:: not a number> 문자가 입력 되었다면 ..
+			alert("나이는 숫자로만 입력해주세요 !! ");
+			return false;
+	}
+		
+	}
+
+</script>
+
+</head>
+<body>
+<h2 align="center">Cafe Entrance Form</h2><p>
+<form action="EntranceServlet" method="get" onsubmit="rerurn enterForm()" name="frm" id="formFrm">
+Name	::<input type="text" name="name" required="required"><br><br> <!-- required 입력하지 않으면오류발생 -->
+Age 	::<input type="text" name="age" required="required"><br><br>
+<input type="submit" value=">... login to DB server ...<">
+
+</form>
+</body>
+</html>
+
+
+

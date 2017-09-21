@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  
+  <!-- 아래 항목을 보면 컨테이너가 관리하는 웹 어플이 어떤것이 있는지 확인가능  -->
+  <servlet>
+    <servlet-name>LifeCycleServlet</servlet-name> <!--  내부에서만 사용되는이름  -->
+    <servlet-class>servlet.life.step1.LifeCycleServlet</servlet-class> <!-- 완전한 서블릿명기재 패키지면 포함 .class 제외  -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+	<!-- 런타임시 요청이 들어오면 컨테이너는 항목검색후 물어보고 URL이 어떤 서비스를 담당하는지   -->
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern>/Life</url-pattern> <!-- 클라이언트가 사용하는 서블릿 이름 (가공이름 클래스명아님)  -->
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LifeCycleFileStore</servlet-name>
+    <servlet-class>servlet.life.step2.LifeCycleFileStore</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifeCycleFileStore</servlet-name>
+    <url-pattern>/LifeCycleFileStore</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>LifeCycleFileStore3</servlet-name>
+    <servlet-class>servlet.life.step3.LifeCycleFileStore</servlet-class>
+   	<init-param>
+   		<param-name>filepath</param-name>
+   		<param-value>./step2/count.txt</param-value>
+   	</init-param>
+   	<init-param>
+   		<param-name>NAME</param-name>
+   		<param-value>HaBaRee</param-value>
+   	</init-param>
+   	
+   	<init-param>
+   		<param-name>E-MAIL</param-name>
+   		<param-value>sueup@daum.net</param-value>
+   	</init-param>
+   	
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifeCycleFileStore3</servlet-name>
+    <url-pattern>/LifeCycleFileStore3</url-pattern>
+  </servlet-mapping>
+   
+</web-app>
+
+
+
+
+
+
+
+
+

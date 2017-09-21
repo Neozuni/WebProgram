@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	#frm{
+		text-align: center
+		
+		}
+
+</style>
+
+<script type="text/javascript">
+	function push() {
+		alert("버튼을 클릭!!");
+	}
+
+</script>
+
+</head>
+
+<body>
+
+<h2 align="center"> Multi form test ... </h2><p>
+<form action="MFT5" method="post" id="frm"> 
+ID:<input type="text" name="id" value="neo"><br><br> <!-- value 사용시 id fix -->
+PW:<input type="password" name="pw"><br><br>
+<input type="date" name="date">
+email<input type="email" name="em">
+<input type="file" name="f"><p>
+
+Hobby:<br><br>
+영화보기<input type="checkbox" name="hobby" value="movie"><br><br>
+독서하기<input type="checkbox" name="hobby" value="read"><br><br>
+음악듣기<input type="checkbox" name="hobby" value="music"><br><br>
+드라이빙<input type="checkbox" name="hobby" value="drive"><br><br>
+
+성별:
+여<input type="radio" name="gender" value="F">
+남<input type="radio" name="gender" value="M"><br><br>
+
+<input type="hidden" name="command" value="register">
+<hr>
+
+<select multiple="multiple" name="tel">
+	<option>010</option>
+	<option>011</option>
+	<option>016</option>
+	<option>017</option>
+	<option value="SK C&C">019</option> <!-- value 를 안주면 선택값 있으면 value 값  -->
+</select><br><br>
+<hr>
+
+<textarea rows="30" cols="30" name="intro">방문해 주셔서 감사하다 글 입력해라 </textarea>
+<p>
+
+<input type="submit" value="SEND">
+<input type="reset" value="CLEAR">
+<input type="button" value="Button" onclick="push()">
+
+
+</form>
+
+</body>
+</html>

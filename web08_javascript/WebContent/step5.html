@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>array 선언 , 생성 </title>
+
+<script type="text/javascript">
+
+	function arrayTest() {
+		var arr = [
+			"IU1",
+			"IU2"
+			
+		];	
+		//alert(arr.length); // length 
+		//alert(arr.toString()); // tostring overring
+		
+		//위의 tostring 와 동일함.
+		var arr2 = [];
+		arr2.push("iu1");
+		arr2.push("iu2");
+		//alert(arr2);
+		
+		for(i=0;i<arr2.length; i++){
+			str+=arr2[i]+" "; 
+			//alert(arr2[i])
+		}
+		alert(str);
+	}
+
+</script>
+
+</head>
+<body>
+<input type="button" value="ArrayCreating" onclick="arrayTest()">
+</body>
+</html>
