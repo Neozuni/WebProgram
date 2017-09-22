@@ -20,23 +20,35 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 import config.OracleInfo;
 
 public class MemberDAO {
+	private DataSource ds;
 	
 	//싱글톤 패턴으로 작성
 	private static MemberDAO dao = new MemberDAO();
 	private MemberDAO(){
 		System.out.println("Singletone Pattern...DAO Creating...");
+		try {
+			Context ic = new InitialContext();
+			ds=(DataSource)ic.lookup("java:comp/env/jdbc/oracleDB");
+			System.out.println("DataSource.....Lookup..");
+		}catch(NamingException e){
+			System.out.println("DataSource.....Lookup..FAIL...");
+		}
 	}
 	public static MemberDAO getInstance(){
 		return dao;		
-	}
-	
+	}	
 	//공통적인 로직은 여기다 뽑는다..
 	public  Connection getConnection() throws SQLException{
 		System.out.println("디비연결 성공....");
-		return DriverManager.getConnection(OracleInfo.URL, "hr", "hr");
+		return ds.getConnection();
 		
 	}
 	public void closeAll(PreparedStatement ps, Connection conn)throws SQLException{
@@ -54,58 +66,43 @@ public class MemberDAO {
 	public void registerMember(MemberVO vo)throws SQLException{
 		Connection conn = null;
 		PreparedStatement ps = null;
-		
-		
 		try{
-			conn=  getConnection();
+			conn = getConnection();
 			String query = "INSERT INTO member VALUES(?,?,?,?)";
 			ps = conn.prepareStatement(query);
-			System.out.println("PreparedStatement 생성됨...registerMember");
 			
-			ps.setString(1, vo.getId());
-			ps.setString(2, vo.getPassword());
-			ps.setString(3, vo.getName());
-			ps.setString(4, vo.getAddress());
+			ps.setString(1,vo.getId());
+			ps.setString(2,vo.getName());
+			ps.setString(3,vo.getPassword());
+			ps.setString(4,vo.getAddress());
 			
 			System.out.println(ps.executeUpdate()+" row INSERT OK!!");
 		}finally{
 			closeAll(ps, conn);
 		}
-	}//registerMember
-	
+	}	
 	public MemberVO findByIdMember(String id)throws SQLException{
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		MemberVO vo = null;
-		
 		try{
 			conn = getConnection();
 			String query = "SELECT * FROM member WHERE id=?";
 			ps = conn.prepareStatement(query);
-			System.out.println("PreparedStatement....findByIdMember..");
-			
 			ps.setString(1, id);
-			rs = ps.executeQuery();
-			
-			if(rs.next()){
+			rs=  ps.executeQuery();
+			if(rs.next()) {
 				vo = new MemberVO(id, 
-						rs.getString("password"), //컬럼명 
+						rs.getString("password"), //컬럼명
 						rs.getString("name"), 
-						rs.getString("address"));
+						rs.getString("address"));						
 			}
 		}finally{
 			closeAll(rs, ps, conn);
 		}
 		return vo;
-	}//findByIdMember
-	
-	
-	public static void main(String[ ] args) {
-		MemberDAO dao = new MemberDAO();
-		
-		//dao.registerMember(new MemberVO(id, password, name, address));
-	}
+	}		
 }
 
 

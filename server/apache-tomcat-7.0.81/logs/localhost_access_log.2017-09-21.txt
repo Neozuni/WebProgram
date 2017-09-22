@@ -128,3 +128,5 @@
 0:0:0:0:0:0:0:1 - - [21/Sep/2017:16:20:48 +0900] "GET /web13_ConnectionPooling/connection.jsp HTTP/1.1" 500 5192
 127.0.0.1 - - [21/Sep/2017:16:23:47 +0900] "GET / HTTP/1.1" 200 11217
 0:0:0:0:0:0:0:1 - - [21/Sep/2017:16:23:49 +0900] "GET /web13_ConnectionPooling/connection.jsp HTTP/1.1" 200 398
+127.0.0.1 - - [21/Sep/2017:17:58:39 +0900] "GET / HTTP/1.1" 200 11217
+0:0:0:0:0:0:0:1 - - [21/Sep/2017:17:58:40 +0900] "GET /web13_ConnectionPooling/connection.jsp HTTP/1.1" 200 398
