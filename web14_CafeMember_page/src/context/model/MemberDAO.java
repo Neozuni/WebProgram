@@ -26,7 +26,7 @@ import javax.sql.DataSource;
 
 public class MemberDAO {
 	private DataSource ds;
-	
+
 	//싱글톤 패턴으로 작성
 	private static MemberDAO dao = new MemberDAO();
 	private MemberDAO(){
@@ -46,11 +46,11 @@ public class MemberDAO {
 	public  Connection getConnection() throws SQLException{
 		System.out.println("디비연결 성공....");
 		return ds.getConnection();
-		
+
 	}
 	public void closeAll(PreparedStatement ps, Connection conn)throws SQLException{
 		if(ps!=null) ps.close();
-	
+
 		if(conn != null) conn.close();
 	}
 	public void closeAll(ResultSet rs,PreparedStatement ps, Connection conn)throws SQLException{
@@ -67,12 +67,12 @@ public class MemberDAO {
 			conn = getConnection();
 			String query = "INSERT INTO member VALUES(?,?,?,?)";
 			ps = conn.prepareStatement(query);
-			
+
 			ps.setString(1,vo.getId());
 			ps.setString(2,vo.getName());
 			ps.setString(3,vo.getPassword());
 			ps.setString(4,vo.getAddress());
-			
+
 			System.out.println(ps.executeUpdate()+" row INSERT OK!!");
 		}finally{
 			closeAll(ps, conn);

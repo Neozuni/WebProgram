@@ -69,3 +69,7 @@
 0:0:0:0:0:0:0:1 - - [22/Sep/2017:14:34:52 +0900] "GET /web14_CafeMember_page/image/go.jpg HTTP/1.1" 404 1019
 0:0:0:0:0:0:0:1 - - [22/Sep/2017:14:35:19 +0900] "GET /web14_CafeMember_page/error/error.html HTTP/1.1" 200 243
 0:0:0:0:0:0:0:1 - - [22/Sep/2017:14:35:19 +0900] "GET /web14_CafeMember_page/img/go.jpg HTTP/1.1" 200 157705
+127.0.0.1 - - [22/Sep/2017:20:38:08 +0900] "GET / HTTP/1.1" 200 11217
+0:0:0:0:0:0:0:1 - - [22/Sep/2017:20:38:11 +0900] "GET /web14_CafeMember_page/WEB-INF/classes/context/model/MemberDAO.java HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [22/Sep/2017:20:38:27 +0900] "GET /web14_CafeMember_page/redirect1.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [22/Sep/2017:20:38:32 +0900] "GET /web14_CafeMember_page/redirect1.jsp?word=123 HTTP/1.1" 302 -

@@ -5,6 +5,7 @@ public class MemberVO {
 	private String password;
 	private String name;
 	private String address;
+	
 	public MemberVO(String id, String password, String name, String address) {
 		super();
 		this.id = id;
