@@ -9,4 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ControllerAction</display-name>
+    <servlet-name>ControllerAction</servlet-name>
+    <servlet-class>board.controller.ControllerAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControllerAction</servlet-name>
+    <url-pattern>/ControllerAction</url-pattern>
+  </servlet-mapping>
 </web-app>

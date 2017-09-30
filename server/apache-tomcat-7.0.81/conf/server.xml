@@ -128,7 +128,7 @@
 
       <Context docBase="/Users/zunix/Documents/GitHub/WebProgram/server/apache-tomcat-7.0.81/webapps/web31_ItemCart3" path="/web31_ItemCart3" reloadable="true" source="org.eclipse.jst.jee.server:web31_ItemCart3">
 	<Resource auth="container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory" maxActive="500" maxIdle="100" name="jdbc/oracleDB" password="hr" type="javax.sql.DataSource" url="jdbc:oracle:thin:@192.168.36.10:1521:xe" username="hr"/>
-</Context><Context docBase="/Users/zunix/Documents/GitHub/WebProgram/server/apache-tomcat-7.0.81/webapps/web32_BoardBizUnitTest" path="/web32_BoardBizUnitTest" reloadable="true" source="org.eclipse.jst.jee.server:web32_BoardBizUnitTest"/></Host>
+</Context></Host>
     </Engine>
   </Service>
 </Server>
