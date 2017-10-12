@@ -1,5 +1,7 @@
 package board.model;
 
+import java.sql.Timestamp;
+
 public class BoardVO {
 	private int num;
 	private String writer;

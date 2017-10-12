@@ -126,7 +126,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="/Users/zunix/Documents/GitHub/WebProgram/server/apache-tomcat-7.0.81/webapps/web31_ItemCart3" path="/web31_ItemCart3" reloadable="true" source="org.eclipse.jst.jee.server:web31_ItemCart3">
+      <Context docBase="/Users/zunix/Documents/GitHub/WebProgram/server/apache-tomcat-7.0.81/webapps/web34_BoardDelete_Update" path="/web34_BoardDelete_Update" reloadable="true" source="org.eclipse.jst.jee.server:web34_BoardDelete_Update">
 	<Resource auth="container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory" maxActive="500" maxIdle="100" name="jdbc/oracleDB" password="hr" type="javax.sql.DataSource" url="jdbc:oracle:thin:@192.168.36.10:1521:xe" username="hr"/>
 </Context></Host>
     </Engine>
